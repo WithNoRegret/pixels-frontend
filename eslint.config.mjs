@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
   {
     files: ["**/*.{ts,tsx}"],
     plugins: {
@@ -21,14 +21,7 @@ const eslintConfig = [
       "import/order": [
         "error",
         {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-          ],
+          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
           pathGroups: [
             {
               pattern: "{react,react-dom/**}",
