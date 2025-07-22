@@ -1,5 +1,7 @@
 "use client";
 
+import { Mouse } from "lucide-react";
+
 import { cn } from "@/shared/lib";
 
 import { useCanvas } from "../model/useCanvas";
@@ -12,11 +14,16 @@ export const GameCanvas = ({ className }: GameCanvasProps) => {
   const { canvasRef } = useCanvas();
 
   return (
-    <canvas
-      className={cn("w-full touch-none bg-zinc-100", className)}
-      width={200}
-      height={200}
-      ref={canvasRef}
-    />
+    <div className="relative w-full h-full">
+      <canvas
+        className={cn("w-full touch-none bg-zinc-100 hover:cursor-grab", className)}
+        width={200}
+        height={200}
+        ref={canvasRef}
+      />
+      <div className="absolute top-5 left-5 bg-white/80 px-3 py-1 text-sm rounded border border-zinc-300 shadow flex items-center gap-1">
+        <Mouse size={16} /> Scroll to zoom, drag to move
+      </div>
+    </div>
   );
 };
