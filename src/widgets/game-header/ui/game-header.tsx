@@ -7,7 +7,7 @@ interface GameHeaderProps {
 
 export const GameHeader = ({ className }: GameHeaderProps) => {
   return (
-    <header className={cn("", className)}>
+    <header className={cn("px-3 py-2", className)}>
       <Logo />
     </header>
   );

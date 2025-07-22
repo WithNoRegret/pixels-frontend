@@ -1,1 +1,1 @@
-export { Game as default } from "@/pages_";
+export { Game as default } from "@/pages_/game";
