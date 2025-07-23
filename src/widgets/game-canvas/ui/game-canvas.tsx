@@ -16,7 +16,7 @@ export const GameCanvas = ({ className }: GameCanvasProps) => {
   return (
     <div className="relative w-full h-full">
       <canvas
-        className={cn("w-full touch-none bg-zinc-100 hover:cursor-grab", className)}
+        className={cn("w-full touch-none bg-zinc-100 hover:cursor-pointer", className)}
         width={200}
         height={200}
         ref={canvasRef}
