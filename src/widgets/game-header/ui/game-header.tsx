@@ -7,7 +7,7 @@ interface GameHeaderProps {
 
 export const GameHeader = ({ className }: GameHeaderProps) => {
   return (
-    <header className={cn("px-3 py-2 border-b border-zinc-200 bg-white", className)}>
+    <header className={cn("px-5 py-2 bg-background", className)}>
       <Logo />
     </header>
   );
