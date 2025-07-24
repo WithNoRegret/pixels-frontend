@@ -1,4 +1,4 @@
-import { ColorPicker } from "@/features/choose-color";
+import { ColorPicker } from "@/features/color-picker";
 import { cn } from "@/shared/lib";
 import { GameCanvas } from "@/widgets/game-canvas";
 import { GameHeader } from "@/widgets/game-header";

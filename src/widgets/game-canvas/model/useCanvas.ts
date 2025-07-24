@@ -28,6 +28,9 @@ export const useCanvas = () => {
       e.preventDefault();
 
       const zoom = e.deltaY < 0 ? 1.1 : 0.9;
+
+      if (zoom === 0.9 && scaleRef.current < 0.15) return;
+
       scaleRef.current *= zoom;
 
       draw();

@@ -3,6 +3,8 @@ import { PropsWithChildren } from "react";
 import type { Metadata } from "next";
 import { Geist_Mono, Jersey_10 } from "next/font/google";
 
+import { ReactQueryProvider } from "../providers";
+
 import "@/shared/config/globals.css";
 
 const jersey = Jersey_10({
@@ -25,7 +27,7 @@ export const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en">
       <body className={`${jersey.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
   );
