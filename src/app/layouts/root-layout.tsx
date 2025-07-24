@@ -1,22 +1,11 @@
 import { PropsWithChildren } from "react";
 
 import type { Metadata } from "next";
-import { Geist_Mono, Jersey_10 } from "next/font/google";
 
-import { ReactQueryProvider } from "../providers";
-
+import { jersey, geistMono } from "@/shared/config";
 import "@/shared/config/globals.css";
 
-const jersey = Jersey_10({
-  variable: "--font-jersey-sans",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ReactQueryProvider } from "../providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
