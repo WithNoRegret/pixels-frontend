@@ -11,8 +11,10 @@ export const Game = ({ className }: GameProps) => {
   return (
     <div className={cn("relative", className)}>
       <GameHeader />
-      <GameCanvas />
-      <ColorPicker className="fixed left-5 bottom-5" />
+      <main>
+        <GameCanvas />
+        <ColorPicker className="fixed left-5 bottom-5" />
+      </main>
     </div>
   );
 };
