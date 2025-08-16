@@ -4,6 +4,7 @@ import { Mouse } from "lucide-react";
 
 import { cn } from "@/shared/lib";
 
+import { useBoard } from "../api/use-board";
 import { useCanvas } from "../model/useCanvas";
 
 interface GameCanvasProps {
@@ -11,7 +12,10 @@ interface GameCanvasProps {
 }
 
 export const GameCanvas = ({ className }: GameCanvasProps) => {
+  const { data, isLoading, isError, error } = useBoard();
   const { canvasRef } = useCanvas();
+
+  console.log(data);
 
   return (
     <div className="relative w-full h-full">

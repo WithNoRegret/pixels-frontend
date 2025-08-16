@@ -3,3 +3,8 @@ export interface Color {
   name: string;
   hexCode: string;
 }
+
+export interface Board {
+  color: number;
+  index: number;
+}
