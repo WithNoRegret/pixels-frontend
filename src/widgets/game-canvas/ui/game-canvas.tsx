@@ -2,7 +2,9 @@
 
 import { Mouse } from "lucide-react";
 
+import { useColorPicker } from "@/features/color-picker";
 import { cn } from "@/shared/lib";
+import { ErrorText, Loader } from "@/shared/ui";
 
 import { useBoard } from "../api/use-board";
 import { useCanvas } from "../model/useCanvas";
@@ -12,10 +14,31 @@ interface GameCanvasProps {
 }
 
 export const GameCanvas = ({ className }: GameCanvasProps) => {
-  const { data, isLoading, isError, error } = useBoard();
-  const { canvasRef } = useCanvas();
+  const {
+    data: palette,
+    isLoading: isPaletteLoading,
+    isError: isPaletteError,
+    error: paletteError,
+  } = useColorPicker();
+  const {
+    data: boardData,
+    isLoading: isBoardLoading,
+    isError: isBoardError,
+    error: boardError,
+  } = useBoard();
+  const { canvasRef } = useCanvas({ boardData, palette });
 
-  console.log(data);
+  if (isPaletteLoading || isBoardLoading) {
+    return <Loader className="mx-auto" />;
+  }
+
+  if (isPaletteError) {
+    return <ErrorText message={`Error loading palette: ${paletteError.message}`} />;
+  }
+
+  if (isBoardError) {
+    return <ErrorText message={`Error loading board: ${boardError.message}`} />;
+  }
 
   return (
     <div className="relative w-full h-full">

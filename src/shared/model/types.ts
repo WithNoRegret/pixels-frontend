@@ -4,7 +4,7 @@ export interface Color {
   hexCode: string;
 }
 
-export interface Board {
+export interface Pixel {
   color: number;
   index: number;
 }

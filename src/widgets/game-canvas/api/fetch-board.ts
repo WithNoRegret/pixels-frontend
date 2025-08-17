@@ -1,7 +1,7 @@
 import { BASE_URL } from "@/shared/constants";
-import { Board } from "@/shared/model";
+import { Pixel } from "@/shared/model";
 
-export const fetchBoard = async (): Promise<Board[]> => {
+export const fetchBoard = async (): Promise<Pixel[]> => {
   const response = await fetch(`${BASE_URL}/board/`);
 
   if (!response.ok) {
