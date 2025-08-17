@@ -7,5 +7,9 @@ interface LoaderProps {
 }
 
 export const Loader = ({ className }: LoaderProps) => {
-  return <Loader2 className={cn("w-5 h-5 animate-spin", className)} />;
+  return (
+    <div className={cn("", className)}>
+      <Loader2 className="w-5 h-5 animate-spin" />
+    </div>
+  );
 };

@@ -23,7 +23,7 @@ export const ColorPicker = ({ className }: ColorPickerProps) => {
       {isError ? (
         <ErrorText message={error.message} />
       ) : isLoading ? (
-        <Loader className="mx-auto" />
+        <Loader className="flex justify-center" />
       ) : (
         <div className="grid grid-cols-5 gap-2">
           {data &&

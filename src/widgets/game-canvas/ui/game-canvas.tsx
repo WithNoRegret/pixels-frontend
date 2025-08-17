@@ -29,7 +29,7 @@ export const GameCanvas = ({ className }: GameCanvasProps) => {
   const { canvasRef } = useCanvas({ boardData, palette });
 
   if (isPaletteLoading || isBoardLoading) {
-    return <Loader className="mx-auto" />;
+    return <Loader className="h-[85vh] flex justify-center items-center" />;
   }
 
   if (isPaletteError) {
